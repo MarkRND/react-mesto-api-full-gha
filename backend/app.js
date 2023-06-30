@@ -13,7 +13,7 @@ const { PORT = 3000, WEB_HOST = "mongodb://127.0.0.1:27017/mestodb" } =
   process.env; // ВЫНЕСТИ
 const app = express();
 
-app.use(cors());
+
 const appLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
@@ -24,6 +24,7 @@ const appLimiter = rateLimit({
 mongoose.connect(WEB_HOST, {
   useNewUrlParser: true,
 });
+app.use(cors());
 app.use(appLimiter);
 app.use(helmet());
 app.use(express.json());
