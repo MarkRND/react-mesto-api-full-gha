@@ -15,7 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^2.1.3",
     "sort-by": "^0.0.2",
     "web-vitals": "^2.1.4"
   },
@@ -46,9 +46,10 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.0.0"
+    "gh-pages": "^5.0.0"
   },
   "description": "**react-mesto-auth**",
+  
   "main": "index.js",
   "keywords": [],
   "author": "MarkRND",
