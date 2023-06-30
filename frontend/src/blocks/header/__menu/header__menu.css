@@ -1,0 +1,14 @@
+.header__menu {
+  grid-area: menu;
+}
+
+@media (max-width: 610px) {
+  .header_wrappable .header__menu {
+    width: 100%;
+    padding-bottom: 40px;
+    overflow: hidden;
+    border-bottom: 1px solid #545454;
+    margin-top: 27px;
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+@media screen and (max-width: 610px) {
+  .header__menu-component_log {
+    padding-top: 7px;
+    margin-bottom: -10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

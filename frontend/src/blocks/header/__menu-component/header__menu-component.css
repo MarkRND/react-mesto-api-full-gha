@@ -1,0 +1,19 @@
+.header__menu-component {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__menu-component:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

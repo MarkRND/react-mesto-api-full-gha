@@ -1,0 +1,27 @@
+.login__save-button {
+  cursor: pointer;
+  margin-top: 216px;
+  padding: 14px;
+  border: none;
+  border-radius: 2px;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  transition: opacity 0.3s;
+}
+.login__save-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+@media (max-width: 610px) {
+  .login__save-button {
+    margin-top: 173px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

@@ -1,0 +1,6 @@
+.popup__content {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    max-width: 75vw;
+}

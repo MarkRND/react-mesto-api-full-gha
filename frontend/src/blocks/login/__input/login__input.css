@@ -1,0 +1,27 @@
+.login__input {
+    padding: 0;
+    padding-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #CCC;
+    background-color: transparent;
+    margin-bottom: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFF;
+  }
+  
+  .login__input:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .login__input::placeholder {
+    font-weight: 400;
+    color: #CCC;
+  }
+  
+  .login__input:focus {
+    outline-offset: 3px;
+  }

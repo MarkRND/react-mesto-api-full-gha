@@ -1,0 +1,4 @@
+.header_wrappable .header__menu_opened {
+  max-height: 500px;
+  display: block;
+}

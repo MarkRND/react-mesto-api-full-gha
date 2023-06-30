@@ -1,0 +1,12 @@
+.popup__caption {
+  min-width: 240px;
+  margin-top: 10px;
+  max-width: 75vw;
+  margin: 10px 0 0 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+}
