@@ -24,7 +24,7 @@ const appLimiter = rateLimit({
 mongoose.connect(WEB_HOST, {
   useNewUrlParser: true,
 });
-app.use(cors());
+// app.use(cors());
 app.use(appLimiter);
 app.use(helmet());
 app.use(express.json());
