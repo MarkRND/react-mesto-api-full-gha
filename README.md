@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP: 158.160.101.213
+Публичный IPv4: 158.160.101.213
 
 Frontend: https://markus.nomoreparties.sbs
 
