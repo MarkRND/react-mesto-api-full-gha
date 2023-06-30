@@ -9,11 +9,11 @@ const {
   validationSignup,
 } = require("../middlwares/celebrateJoi");
 
-app.get('/crash-test', () => {
+router.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
-}); 
+});
 
 router.post("/signup", validationSignup, addUser);
 router.post("/signin", validationSignin, login);
