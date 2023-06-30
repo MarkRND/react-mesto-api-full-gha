@@ -11,6 +11,6 @@
 
 IP: 158.160.101.213
 
-Frontend https://api.markus.nomoreparties.sbs
+Frontend: https://markus.nomoreparties.sbs
 
-Backend https://markus.nomoreparties.sbs
+Backend: https://api.markus.nomoreparties.sbs
