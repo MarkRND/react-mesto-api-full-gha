@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.101.213
+IP: 158.160.101.213
 
-Frontend https://api.markus.nomoreparties.sbs/
+Frontend https://api.markus.nomoreparties.sbs
 
 Backend https://markus.nomoreparties.sbs
