@@ -12,18 +12,7 @@ const GlobalError = require("./middlwares/GlobalError");
 const { PORT = 3000, WEB_HOST = "mongodb://127.0.0.1:27017/mestodb" } =
   process.env; // ВЫНЕСТИ
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "http://markus.nomoreparties.sbs",
-      "http://api.markus.nomoreparties.sbs",
-      "https://markus.nomoreparties.sbs",
-      "https://api.markus.nomoreparties.sbs",
-    ],
-  })
-);
+
 app.use(cors());
 const appLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
