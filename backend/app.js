@@ -10,7 +10,7 @@ const router = require("./routes");
 const GlobalError = require("./middlwares/GlobalError");
 
 const { PORT = 3000, WEB_HOST = "mongodb://127.0.0.1:27017/mestodb" } =
-  process.env; // ВЫНЕСТИ
+  process.env;
 const app = express();
 
 
