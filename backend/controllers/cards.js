@@ -4,7 +4,7 @@ const NotFoundError = require("../messageError/NotFoundError");
 const ForbiddenError = require("../messageError/ForbiddenError");
 const BadRequestError = require("../messageError/BadRequestError");
 
-const getCards = async (req, res,next) => {
+const getCards = async (req, res, next) => {
   try {
     const cards = await Card.find({});
     res.send(cards);
@@ -13,7 +13,7 @@ const getCards = async (req, res,next) => {
   }
 };
 
-const addCard = async (req, res) => {
+const addCard = async (req, res, next) => {
   try {
     const { name, link } = req.body;
     const ownerId = req.user._id;
