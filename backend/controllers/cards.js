@@ -1,15 +1,15 @@
 const Card = require("../models/card");
-const { messageError } = require("../messageError/messageError");
 
 const NotFoundError = require("../messageError/NotFoundError");
 const ForbiddenError = require("../messageError/ForbiddenError");
+const BadRequestError = require("../messageError/BadRequestError");
 
-const getCards = async (req, res) => {
+const getCards = async (req, res,next) => {
   try {
     const cards = await Card.find({});
     res.send(cards);
   } catch (err) {
-    messageError(err, req, res);
+    next(err);
   }
 };
 
@@ -20,11 +20,15 @@ const addCard = async (req, res) => {
     const card = await Card.create({ name, link, owner: ownerId });
     res.send(card);
   } catch (err) {
-    messageError(err, req, res);
+    if (err.name === "ValidationError") {
+      next(new BadRequestError("Неудалось создать карточку"));
+      return;
+    }
+    next(err);
   }
 };
 
-const addLikeCard = async (req, res) => {
+const addLikeCard = async (req, res, next) => {
   try {
     const userId = req.user._id;
     const card = await Card.findByIdAndUpdate(
@@ -37,11 +41,11 @@ const addLikeCard = async (req, res) => {
     }
     res.send(card);
   } catch (err) {
-    messageError(err, req, res);
+    next(err);
   }
 };
 
-const deleteLikeCard = async (req, res) => {
+const deleteLikeCard = async (req, res, next) => {
   try {
     const userId = req.user._id;
     const card = await Card.findByIdAndUpdate(
@@ -54,11 +58,11 @@ const deleteLikeCard = async (req, res) => {
     }
     res.send(card);
   } catch (err) {
-    messageError(err, req, res);
+    next(err);
   }
 };
 
-const deleteCard = async (req, res) => {
+const deleteCard = async (req, res, next) => {
   try {
     const { cardId } = req.params;
     const card = await Card.findById(cardId);
@@ -71,7 +75,7 @@ const deleteCard = async (req, res) => {
     const deletedCard = await Card.findByIdAndRemove(cardId);
     res.send(deletedCard);
   } catch (err) {
-    messageError(err, req, res);
+    next(err);
   }
 };
 
