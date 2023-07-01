@@ -25,6 +25,11 @@ mongoose.connect(WEB_HOST, {
   useNewUrlParser: true,
 });
 app.use(cors());
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.use(appLimiter);
 app.use(helmet());
 app.use(express.json());
