@@ -7,6 +7,7 @@ const { messageError } = require("../messageError/messageError");
 const NotFoundError = require("../messageError/NotFoundError");
 const BadRequestError = require("../messageError/BadRequestError");
 const ConflictError = require("../messageError/ConflictError");
+const UnauthorizedError = require("../messageError/UnauthorizedError");
 
 const getInfoUsers = async (req, res, next) => {
   try {
@@ -108,15 +109,11 @@ const login = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email }).select("+password");
     if (!user) {
-      const err = new Error("Неверный email или password");
-      err.name = "UnauthorizedError";
-      messageError(err, req, res);
+      throw new UnauthorizedError("Неверный email или password");
     }
     const hashedPassword = await bcrypt.compare(password, user.password);
     if (!hashedPassword) {
-      const err = new Error("Неверный password или email");
-      err.name = "UnauthorizedError";
-      messageError(err, req, res);
+      throw new UnauthorizedError("Неверный password или email");
     }
     const token = jwt.sign(
       {
